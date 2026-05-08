@@ -89,8 +89,8 @@ get_header();
 		echo '		<h2 class="section-title">Equipos de <em>Alta Precisión</em></h2>';
 		echo '	</div>';
 		
-		echo '	<div class="products-container">';
-		echo do_shortcode( '[products limit="4" columns="4" orderby="date" order="DESC"]' );
+		echo '	<div class="products-container woocommerce">';
+		echo do_shortcode( '[products limit="8" columns="4" orderby="date" order="DESC"]' );
 		echo '	</div>';
 		
 		echo '	<div class="section-footer">';

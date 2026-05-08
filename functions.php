@@ -97,6 +97,15 @@ function sermacosa_widgets_init() {
 	) );
 }
 add_action( 'widgets_init', 'sermacosa_widgets_init' );
+/**
+ * WooCommerce: Related Products Configuration
+ */
+add_filter( 'woocommerce_output_related_products_args', 'sermacosa_related_products_args', 99 );
+function sermacosa_related_products_args( $args ) {
+	$args['posts_per_page'] = 8; // 8 items total, 2 rows × 4 columns
+	$args['columns'] = 4;
+	return $args;
+}
 
 /**
  * Customizer Settings
@@ -242,13 +251,22 @@ add_action( 'wp_head', 'sermacosa_custom_css' );
 /**
  * WooCommerce Support & Integration
  */
-function sermacosa_woocommerce_setup() {
-	add_theme_support( 'woocommerce' );
-	add_theme_support( 'wc-product-gallery-zoom' );
-	add_theme_support( 'wc-product-gallery-lightbox' );
-	add_theme_support( 'wc-product-gallery-slider' );
-}
 add_action( 'after_setup_theme', 'sermacosa_woocommerce_setup' );
+
+/**
+ * Related Products: configuration handled above at line 103.
+ */
+
+
+/**
+ * Set WooCommerce columns to 4 by default
+ */
+add_filter('loop_shop_columns', 'sermacosa_loop_columns', 999);
+if (!function_exists('sermacosa_loop_columns')) {
+	function sermacosa_loop_columns() {
+		return 4;
+	}
+}
 
 /**
  * WooCommerce Content Wrappers

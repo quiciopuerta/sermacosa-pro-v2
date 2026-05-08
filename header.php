@@ -85,22 +85,13 @@
 
 			<nav class="main-navigation" id="primary-navigation" role="navigation" aria-label="Menú principal">
 				<?php
-				// Menú Principal (Desktop)
+				// Menú Principal (Responsive)
 				wp_nav_menu( array(
 					'theme_location' => 'primary',
 					'fallback_cb'    => 'wp_page_menu',
 					'container'      => false,
-					'menu_class'     => 'nav-menu desktop-nav',
+					'menu_class'     => 'nav-menu',
 				) );
-
-				// Menú Móvil (si está configurado)
-				if ( has_nav_menu( 'mobile' ) ) {
-					wp_nav_menu( array(
-						'theme_location' => 'mobile',
-						'container'      => false,
-						'menu_class'     => 'nav-menu mobile-nav',
-					) );
-				}
 				?>
 			</nav>
 
