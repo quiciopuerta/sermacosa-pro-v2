@@ -251,6 +251,23 @@ add_action( 'wp_head', 'sermacosa_custom_css' );
 /**
  * WooCommerce Support & Integration
  */
+function sermacosa_woocommerce_setup() {
+	add_theme_support( 'woocommerce', array(
+		'thumbnail_image_width' => 400,
+		'single_image_width'    => 800,
+		'product_grid'          => array(
+			'default_rows'    => 2,
+			'min_rows'        => 1,
+			'max_rows'        => 8,
+			'default_columns' => 4,
+			'min_columns'     => 2,
+			'max_columns'     => 4,
+		),
+	) );
+	add_theme_support( 'wc-product-gallery-zoom' );
+	add_theme_support( 'wc-product-gallery-lightbox' );
+	add_theme_support( 'wc-product-gallery-slider' );
+}
 add_action( 'after_setup_theme', 'sermacosa_woocommerce_setup' );
 
 /**
