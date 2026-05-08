@@ -6,69 +6,76 @@
 get_header();
 ?>
 
-<main class="container">
-	<div class="page-header">
+<div class="page-header">
+	<div class="container">
 		<h1 class="page-title">Solicitar Presupuesto</h1>
-		<p class="page-subtitle">Completa el formulario y nos pondremos en contacto contigo</p>
+		<p class="page-subtitle">Completa el formulario y nos pondremos en contacto contigo para ofrecerte la mejor solución industrial</p>
 	</div>
+</div>
 
-	<div style="display: grid; grid-template-columns: 2fr 1fr; gap: 3rem; margin: 3rem 0;">
-		<div>
+<main class="container">
+	<div class="contact-container">
+		<div class="premium-card fade-up">
 			<form class="contact-form" method="POST" action="">
-				<div class="form-group">
-					<label for="nombre">Nombre *</label>
-					<input type="text" id="nombre" name="nombre" required>
+				<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
+					<div class="form-group">
+						<label for="nombre">Nombre Completo *</label>
+						<input type="text" id="nombre" name="nombre" class="form-control" placeholder="Ej: Juan Pérez" required>
+					</div>
+
+					<div class="form-group">
+						<label for="email">Email Corporativo *</label>
+						<input type="email" id="email" name="email" class="form-control" placeholder="email@empresa.com" required>
+					</div>
+				</div>
+
+				<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
+					<div class="form-group">
+						<label for="telefono">Teléfono de Contacto *</label>
+						<input type="tel" id="telefono" name="telefono" class="form-control" placeholder="+593 ..." required>
+					</div>
+
+					<div class="form-group">
+						<label for="empresa">Nombre de la Empresa</label>
+						<input type="text" id="empresa" name="empresa" class="form-control" placeholder="Sermacosa S.A.">
+					</div>
 				</div>
 
 				<div class="form-group">
-					<label for="email">Email *</label>
-					<input type="email" id="email" name="email" required>
-				</div>
-
-				<div class="form-group">
-					<label for="telefono">Teléfono *</label>
-					<input type="tel" id="telefono" name="telefono" required>
-				</div>
-
-				<div class="form-group">
-					<label for="empresa">Empresa</label>
-					<input type="text" id="empresa" name="empresa">
+					<label for="productos">Interés Principal</label>
+					<select id="productos" name="productos" class="form-control">
+						<option value="">Selecciona una categoría</option>
+						<option value="maquinaria">Maquinaria Industrial</option>
+						<option value="bordadoras">Bordadoras Profesionales</option>
+						<option value="servicios">Servicio Técnico</option>
+						<option value="repuestos">Repuestos y Accesorios</option>
+						<option value="otro">Otros</option>
+					</select>
 				</div>
 
 				<div class="form-group">
 					<label for="asunto">Asunto *</label>
-					<input type="text" id="asunto" name="asunto" required>
+					<input type="text" id="asunto" name="asunto" class="form-control" placeholder="Ej: Cotización de bordadora Tajima" required>
 				</div>
 
 				<div class="form-group">
-					<label for="mensaje">Mensaje *</label>
-					<textarea id="mensaje" name="mensaje" rows="6" required></textarea>
+					<label for="mensaje">Mensaje detallado *</label>
+					<textarea id="mensaje" name="mensaje" class="form-control" placeholder="Cuéntanos sobre tus necesidades..." required></textarea>
 				</div>
 
-				<div class="form-group">
-					<label for="productos">¿Qué productos te interesan?</label>
-					<select id="productos" name="productos">
-						<option value="">Selecciona una opción</option>
-						<option value="maquinaria">Maquinaria</option>
-						<option value="bordadoras">Bordadoras</option>
-						<option value="servicios">Servicios</option>
-						<option value="repuestos">Repuestos</option>
-						<option value="otro">Otro</option>
-					</select>
-				</div>
-
-				<button type="submit" class="btn btn-dark" style="width: 100%; padding: 1rem;">
-					ENVIAR PRESUPUESTO
+				<button type="submit" class="button" style="width: 100%; padding: 1.25rem; font-size: 1rem; letter-spacing: 0.05em;">
+					ENVIAR SOLICITUD DE PRESUPUESTO
 				</button>
 			</form>
 		</div>
 
-		<div class="contact-info">
-			<div class="info-box">
-				<h3>Información de Contacto</h3>
-
-				<div class="info-item">
-					<h4>Teléfono</h4>
+		<div class="contact-sidebar">
+			<div class="info-item fade-up" style="--delay: 0.1s">
+				<div class="info-icon">
+					<svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+				</div>
+				<div class="info-content">
+					<h4>Llámanos</h4>
 					<p>
 						<?php
 						$phone = get_theme_mod( 'sermacosa_phone', '+593 2 123-4567' );
@@ -77,135 +84,46 @@ get_header();
 						echo '</a>';
 						?>
 					</p>
+					<p style="font-size: 0.85rem;">Lun - Vie, 9:00 - 18:00</p>
 				</div>
+			</div>
 
-				<div class="info-item">
-					<h4>Email</h4>
+			<div class="info-item fade-up" style="--delay: 0.2s">
+				<div class="info-icon">
+					<svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+				</div>
+				<div class="info-content">
+					<h4>Escríbenos</h4>
 					<p>
-						<?php
-						$email = get_theme_mod( 'sermacosa_email', 'info@sermacosa.com' );
-						?>
+						<?php $email = get_theme_mod( 'sermacosa_email', 'info@sermacosa.com' ); ?>
 						<a href="mailto:<?php echo esc_attr( $email ); ?>">
 							<?php echo esc_html( $email ); ?>
 						</a>
 					</p>
+					<p style="font-size: 0.85rem;">Respuesta en menos de 24h</p>
 				</div>
+			</div>
 
-				<div class="info-item">
-					<h4>Dirección</h4>
+			<div class="info-item fade-up" style="--delay: 0.3s">
+				<div class="info-icon">
+					<svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+				</div>
+				<div class="info-content">
+					<h4>Visítanos</h4>
 					<p>
-						<?php
-						$address = get_theme_mod( 'sermacosa_address', 'Ecuador' );
-						echo esc_html( $address );
-						?>
+						<?php echo esc_html( get_theme_mod( 'sermacosa_address', 'Quito, Ecuador' ) ); ?>
 					</p>
+					<p style="font-size: 0.85rem;">Showroom disponible con cita previa</p>
 				</div>
+			</div>
 
-				<div class="info-item">
-					<h4>Soporte</h4>
-					<p>Disponible 24/7 para resolver tus inquietudes</p>
-				</div>
+			<div class="premium-card" style="padding: 2rem; background: var(--primary-navy); color: var(--white); margin-top: 3rem;">
+				<h4 style="margin-bottom: 1rem;">¿Necesitas ayuda técnica?</h4>
+				<p style="color: rgba(255,255,255,0.7); font-size: 0.9rem; margin-bottom: 1.5rem;">Nuestro equipo de expertos está listo para ayudarte con el mantenimiento de tu maquinaria.</p>
+				<a href="#" class="button" style="background: var(--primary-orange); border-color: var(--primary-orange);">SOPORTE TÉCNICO</a>
 			</div>
 		</div>
 	</div>
 </main>
-
-<style>
-	.page-header {
-		text-align: center;
-		margin: 3rem 0;
-	}
-
-	.page-subtitle {
-		font-size: 1.1rem;
-		color: var(--text-gray);
-		margin-top: 1rem;
-	}
-
-	.contact-form {
-		background: var(--white);
-		padding: 2.5rem;
-		border-radius: 4px;
-		border: 1px solid var(--border-color);
-	}
-
-	.form-group {
-		margin-bottom: 1.5rem;
-	}
-
-	.form-group label {
-		display: block;
-		margin-bottom: 0.5rem;
-		font-weight: 600;
-		color: var(--primary-navy);
-	}
-
-	.form-group input,
-	.form-group textarea,
-	.form-group select {
-		width: 100%;
-		padding: 0.75rem;
-		border: 1px solid var(--border-color);
-		border-radius: 4px;
-		font-family: inherit;
-		font-size: 1rem;
-		transition: var(--transition);
-	}
-
-	.form-group input:focus,
-	.form-group textarea:focus,
-	.form-group select:focus {
-		outline: none;
-		border-color: var(--primary-orange);
-		box-shadow: 0 0 0 3px rgba(232, 80, 10, 0.1);
-	}
-
-	.contact-info {
-		background: var(--white);
-		padding: 2.5rem;
-		border-radius: 4px;
-		border: 1px solid var(--border-color);
-		height: fit-content;
-	}
-
-	.info-box h3 {
-		margin-top: 0;
-		margin-bottom: 2rem;
-		color: var(--primary-navy);
-	}
-
-	.info-item {
-		margin-bottom: 2rem;
-		padding-bottom: 2rem;
-		border-bottom: 1px solid var(--border-color);
-	}
-
-	.info-item:last-child {
-		border-bottom: none;
-		margin-bottom: 0;
-		padding-bottom: 0;
-	}
-
-	.info-item h4 {
-		margin: 0 0 0.5rem 0;
-		color: var(--primary-navy);
-		font-weight: 700;
-	}
-
-	.info-item p {
-		margin: 0;
-		color: var(--text-gray);
-	}
-
-	.info-item a {
-		color: var(--primary-orange);
-		text-decoration: none;
-		font-weight: 600;
-	}
-
-	.info-item a:hover {
-		color: var(--primary-navy);
-	}
-</style>
 
 <?php get_footer(); ?>

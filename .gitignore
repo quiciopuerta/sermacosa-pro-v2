@@ -1,0 +1,33 @@
+# WordPress
+wp-config.php
+wp-content/uploads/
+wp-content/blogs.dir/
+wp-content/upgrade/
+wp-content/backup-db/
+wp-content/advanced-cache.php
+wp-content/wp-cache-config.php
+wp-content/cache/
+wp-content/languages/
+
+# OS X
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# IDEs
+.vscode/
+.idea/
+
+# Dependencies
+vendor/
+node_modules/
+
+# Environment
+.env
+*.log
+
+# Temp files
+temp_check.php
+activate_woo.php
+fix_woo_pages.php
+configure_permalinks.php
